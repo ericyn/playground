@@ -30,18 +30,8 @@ class SampleItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: const Text('Flutter Playground ✨'),
         actions: [
-          IconButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                barrierColor: Color(0x01000000),
-                builder: (_) => const SexyPrompt(title: 'Sexy promt',)
-              );
-            }, 
-            icon: const Icon(Icons.military_tech)
-          ),
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {

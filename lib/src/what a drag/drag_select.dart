@@ -53,12 +53,9 @@ class DragSelectState extends State<DragSelect> {
         actions: [
           IconButton(
             onPressed: () {
-              
-                _clearSelection;
-              
-              
+              _clearSelection;
             }, 
-            icon: Icon(Icons.clear)
+            icon: const Icon(Icons.clear)
           )
         ],
       ),
@@ -70,8 +67,8 @@ class DragSelectState extends State<DragSelect> {
           child: GridView.builder(
             key: key,
             itemCount: 23,
-           // physics: NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               childAspectRatio: 1.0,
               crossAxisSpacing: 5.0,

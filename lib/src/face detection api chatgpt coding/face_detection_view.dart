@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
@@ -55,6 +57,7 @@ class _FaceDetectionViewState extends State<FaceDetectionView> {
       }
       _text = text;
       _customPaint = null;
+      log(text);
     }
     _isBusy = false;
     if (mounted) {
