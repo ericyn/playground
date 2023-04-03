@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:playground/src/face%20detection%20api%20chatgpt%20coding/face_detection_view.dart';
 import 'package:playground/src/substack%20stack/substack_view.dart';
+import 'package:playground/src/what%20a%20drag/drag_select.dart';
 
 import '../settings/settings_view.dart';
+import '../animated bg/animated_bg.dart';
+import '../sexy prompts/sexy_prompts.dart';
 import 'sample_item.dart';
 import 'sample_item_details_view.dart';
 
@@ -9,7 +13,13 @@ import 'sample_item_details_view.dart';
 class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
     super.key,
-    this.items = const [SampleItem(1, 'Substack stack'), SampleItem(2, 'Sample Item')],
+    this.items = const [
+      SampleItem(1, 'Sample Item'),
+      SampleItem(2, 'Substack stack'), 
+      SampleItem(3, 'Animated Background'),
+      SampleItem(4, 'Drag Select'),
+      SampleItem(5, 'Face Detection'),
+    ],
   });
 
   static const routeName = '/';
@@ -22,6 +32,16 @@ class SampleItemListView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sample Items'),
         actions: [
+          IconButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                barrierColor: Color(0x01000000),
+                builder: (_) => const SexyPrompt(title: 'Sexy promt',)
+              );
+            }, 
+            icon: const Icon(Icons.military_tech)
+          ),
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
@@ -60,10 +80,28 @@ class SampleItemListView extends StatelessWidget {
               // the app after it has been killed while running in the
               // background, the navigation stack is restored.
               switch (item.id) {
-                case 1:
+                case 2:
                   Navigator.restorablePushNamed(
                     context,
                     SubstackView.routeName,
+                  );
+                  break;
+                case 3:
+                  Navigator.restorablePushNamed(
+                    context,
+                    AnimatedGradient.routeName,
+                  );
+                  break;
+                case 4:
+                  Navigator.restorablePushNamed(
+                    context,
+                    DragSelect.routeName
+                  );
+                  break;
+                case 5:
+                  Navigator.restorablePushNamed(
+                    context,
+                    FaceDetectionView.routeName
                   );
                   break;
                 default:

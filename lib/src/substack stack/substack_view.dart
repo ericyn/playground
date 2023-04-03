@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../sexy prompts/sexy_prompts.dart';
+
 class SubstackView extends StatefulWidget {
-  const SubstackView({super.key});
+  const SubstackView({
+    super.key,
+    this.title = 'Substack stack'
+  });
+
+  final String title;
 
   static const routeName = '/substack';
 
@@ -19,6 +26,21 @@ class _SubstackViewState extends State<SubstackView> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text(widget.title),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                barrierColor: Color(0x01000000),
+                builder: (_) => const SexyPrompt(title: 'Sexy promt',)
+              );
+            }, 
+            icon: const Icon(Icons.military_tech)
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           AnimatedPositioned(
