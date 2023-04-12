@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playground/src/face%20detection%20api%20chatgpt%20coding/face_detection_view.dart';
+import 'package:playground/src/family%20button%20confirmation/family_view.dart';
 import 'package:playground/src/substack%20stack/substack_view.dart';
 import 'package:playground/src/what%20a%20drag/drag_select.dart';
 
@@ -19,6 +20,7 @@ class SampleItemListView extends StatelessWidget {
       SampleItem(3, 'Animated Background'),
       SampleItem(4, 'Drag Select'),
       SampleItem(5, 'Face Detection'),
+      SampleItem(6, 'Family Button Confirmation')
     ],
   });
 
@@ -92,6 +94,12 @@ class SampleItemListView extends StatelessWidget {
                   Navigator.restorablePushNamed(
                     context,
                     FaceDetectionView.routeName
+                  );
+                  break;
+                case 6:
+                  Navigator.restorablePushNamed(
+                    context,
+                    FamilyView.routeName
                   );
                   break;
                 default:
