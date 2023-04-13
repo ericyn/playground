@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:playground/src/face%20detection%20api%20chatgpt%20coding/face_detection_view.dart';
 import 'package:playground/src/family%20button%20confirmation/family_view.dart';
+import 'package:playground/src/just%20a%20page/page.dart';
 import 'package:playground/src/substack%20stack/substack_view.dart';
 import 'package:playground/src/what%20a%20drag/drag_select.dart';
 
@@ -72,6 +73,8 @@ class MyApp extends StatelessWidget {
               settings: routeSettings,
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
+                  case PagePagePage.routeName:
+                    return const PagePagePage();
                   case FamilyView.routeName:
                     return const FamilyView();
                   case FaceDetectionView.routeName:
