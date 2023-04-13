@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:playground/src/juicy%20circle%20butt/juicy_circle_button.dart';
 
+import '../image colour extractor 2000/image_colour_extract.dart';
+
 class PagePagePage extends StatefulWidget {
   const PagePagePage({
     super.key,
@@ -43,6 +45,8 @@ class _PagePagePageState extends State<PagePagePage> {
                 Color(0xff5300ff)
               ]
             ),
+            SizedBox(height: 40,),
+            ImageExtractor(imagePath: 'assets/images/poster.jpg',)
           ]
         ),
       ),
