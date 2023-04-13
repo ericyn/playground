@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
 
@@ -7,7 +9,7 @@ class ImageExtractor extends StatefulWidget {
     required this.imagePath
   });
 
-  final String imagePath;
+  final File imagePath;
 
   @override
   State<ImageExtractor> createState() => _ImageExtractorState();
@@ -18,7 +20,7 @@ class _ImageExtractorState extends State<ImageExtractor> {
 
   Future<PaletteGenerator> _updatePaletteGenerator() async {
     paletteGenerator = await PaletteGenerator.fromImageProvider(
-      Image.asset(widget.imagePath).image,
+      Image.file(widget.imagePath).image,
     );
     return paletteGenerator;
   }
@@ -55,7 +57,7 @@ class _ImageExtractorState extends State<ImageExtractor> {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Image.asset(widget.imagePath)
+            child: Image.file(widget.imagePath)
           ),
         );
       }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/src/camera%20action%20xxx/camera_view.dart';
 import 'package:playground/src/face%20detection%20api%20chatgpt%20coding/face_detection_view.dart';
 import 'package:playground/src/family%20button%20confirmation/family_view.dart';
 import 'package:playground/src/just%20a%20page/page.dart';
@@ -23,6 +24,7 @@ class SampleItemListView extends StatelessWidget {
       SampleItem(5, 'Face Detection'),
       SampleItem(6, 'Family Button Confirmation'),
       SampleItem(7, 'Page Page Page'),
+      SampleItem(8, 'Camera View'),
     ],
   });
 
@@ -108,6 +110,12 @@ class SampleItemListView extends StatelessWidget {
                   Navigator.restorablePushNamed(
                     context,
                     PagePagePage.routeName
+                  );
+                  break;
+                case 8:
+                  Navigator.restorablePushNamed(
+                    context,
+                    CameraView.routeName
                   );
                   break;
                 default:

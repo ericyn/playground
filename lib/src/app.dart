@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:playground/src/camera%20action%20xxx/camera_view.dart';
 import 'package:playground/src/face%20detection%20api%20chatgpt%20coding/face_detection_view.dart';
 import 'package:playground/src/family%20button%20confirmation/family_view.dart';
 import 'package:playground/src/just%20a%20page/page.dart';
@@ -73,6 +74,8 @@ class MyApp extends StatelessWidget {
               settings: routeSettings,
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
+                  case CameraView.routeName:
+                    return const CameraView();
                   case PagePagePage.routeName:
                     return const PagePagePage();
                   case FamilyView.routeName:

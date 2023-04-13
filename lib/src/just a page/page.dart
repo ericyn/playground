@@ -46,7 +46,7 @@ class _PagePagePageState extends State<PagePagePage> {
               ]
             ),
             SizedBox(height: 40,),
-            ImageExtractor(imagePath: 'assets/images/poster.jpg',)
+            //ImageExtractor(imagePath: 'assets/images/poster.jpg',)
           ]
         ),
       ),
