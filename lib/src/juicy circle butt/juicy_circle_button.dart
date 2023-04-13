@@ -9,6 +9,7 @@ class JuicyCircleButton extends StatefulWidget {
     required this.innerColors,
     this.width = 50,
     this.height = 50,
+    required this.icon
   });
 
   final bool animateButton;
@@ -16,6 +17,7 @@ class JuicyCircleButton extends StatefulWidget {
   final List<Color> innerColors;
   final double width;
   final double height;
+  final Icon icon;
 
   @override
   State<JuicyCircleButton> createState() => _JuicyCircleButtonState();
@@ -49,10 +51,9 @@ class _JuicyCircleButtonState extends State<JuicyCircleButton> {
                   color: widget.outerColor,
                   border: Border.all(color: widget.outerColor),
                 ),
-                child: const Center(
-                  child: Icon(Icons.add, color: Colors.white)
-                ),
-              ).animate(target: widget.animateButton ? 1 : 0,).scale(),
+              )
+              .animate(target: widget.animateButton ? 1 : 0,)
+              .scale(duration: const Duration(milliseconds: 150)),
             ),
           ),
           AnimatedPositioned(
@@ -90,14 +91,14 @@ class _JuicyCircleButtonState extends State<JuicyCircleButton> {
                       end: Alignment.bottomCenter,
                       colors: widget.innerColors
                     ),
-                    border: Border.all(color: const Color.fromARGB(255, 4, 12, 117))
+                    border: Border.all(color: widget.outerColor)
                   ),
-                  child: const Center(
-                    child: Icon(Icons.add, color: Colors.white)
+                  child: Center(
+                    child: widget.icon,
                   ),
                 )
                 .animate(target: widget.animateButton ? 1 : 0,)
-                .scale()
+                .scale(duration: const Duration(milliseconds: 150)),
               ),
             ),
           ),

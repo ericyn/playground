@@ -28,12 +28,20 @@ class _PagePagePageState extends State<PagePagePage> {
           physics: const BouncingScrollPhysics(),
           children: const [
             JuicyCircleButton(
-              animateButton: true,
-              outerColor: Color.fromARGB(255, 4, 12, 117),
-              innerColors: [
-                Color.fromARGB(255, 85, 145, 255),
-                Color.fromARGB(255, 7, 20, 202),
-              ],
+              animateButton: true, 
+              height: 45,
+              width: 45,
+              icon: Icon(
+                Icons.camera_alt, 
+                color: Colors.white,
+                size: 18,
+              ),
+              outerColor: Color(0xff0a0055), 
+              innerColors:  [
+                Color(0xff1c00d6),
+                Color(0xff4510ff),
+                Color(0xff5300ff)
+              ]
             ),
           ]
         ),
