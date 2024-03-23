@@ -1,0 +1,27 @@
+name: playground
+description: "A Flutter sandbox for experimenting with Widgets and Packages."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  very_good_analysis: 5.1.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: LFE Sans
+      fonts:
+        - asset: assets/fonts/LFESans-Regular.otf
+        - asset: assets/fonts/LFESans-Medium.otf
+          weight: 500
+        - asset: assets/fonts/LFESans-SemiBold.otf
+          weight: 600
+        - asset: assets/fonts/LFESans-Bold.otf
+          weight: 700
